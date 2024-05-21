@@ -1,0 +1,21 @@
+<!-- <div class="row"> -->
+       
+    <div class="product-card  mb-4" appHighlight [DisableProduct]="!product.isInInventory">
+      
+
+        <img [src]="product.imageUrl" alt="product" class="product-image" />
+        <span class="top-right" *ngIf="product.discounted > 0 ">{{product.discounted}} %</span>
+        <div class="product-details"> 
+            <div class="product-name">{{product.name}}</div>
+            <div class="product-category">{{product.category}}</div>
+            <div class="product-inventory"> {{product.color}} Color.Best Seller </div>
+            <div class="product-inventory" [ngStyle]="{fontWeight:'bold', color: product.isInInventory? 'Green' : 'Red'}">
+                {{product.isInInventory == true ? "Available in Stock" : "Not available in stock"}}
+            </div>
+            <div class="product-actions">
+                <div class="product-price">$ {{product.price}}</div>
+                <button class="product-buy-button">Buy Now</button>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

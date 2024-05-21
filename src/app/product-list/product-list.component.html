@@ -1,0 +1,16 @@
+<app-search (SearchTextOnChange)="setSearchText($event)"></app-search>
+<div class="container">
+    <div class="row">
+
+        <app-filter [all]="totalproductscount" [instock]="instock" [outofstock]="outofstock"
+            (selectedRadioButtonChange)="onFilterChanged($event)"></app-filter>
+
+        <div *ngFor="let products of productList" class="col-sm-4" (click)="selectedProduct = products" #GetDetails>
+            <app-product [product]="products"
+                *ngIf="(selectedradiobutton ==='all' || products.isInInventory.toString() === selectedradiobutton) &&(searchText=='' ||products.name.toLowerCase().includes(searchText))" (click)=OnGetDetails(products)></app-product>
+        </div>
+
+
+    </div>
+</div>
+<product-detail *ngIf="selectedProduct" [Getname]="Getname" ></product-detail>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="form-check radio-inline">Filter :
+            <label class="radio-inline m-2">
+                <input type="radio" name="optradio" value="all" [(ngModel)]="selectedradiobutton"
+                    (change)="OnSelectedRadioButtonChange()">{{'All('+all+')'}}
+            </label>
+
+            <label class="radio-inline m-2">
+                <input type="radio" name="optradio" value="true" [(ngModel)]="selectedradiobutton"
+                    (change)="OnSelectedRadioButtonChange()">{{'In stock('+instock+')'}}
+            </label>
+
+            <label class="radio-inline m-2">
+                <input type="radio" name="optradio" value="false" [(ngModel)]="selectedradiobutton"
+                    (change)="OnSelectedRadioButtonChange()">{{'Out of Stock(' + outofstock+')'}}
+            </label>
+        </div>
+    </div>
+
+</div>
